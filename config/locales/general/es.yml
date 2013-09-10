@@ -1,0 +1,21 @@
+es:
+  bool:
+    falseval: "No"
+    trueval: "Si"
+  confirm:
+    delete: "Está seguro que desea borrar este item?"
+    update_domain: "Está seguro que desea actualizar el dominio?"
+  date:
+    formats:
+      default: "%d/%m/%Y"
+  tables:
+    no_records: "No se encontraron resultados."
+  helpers:
+    submit:
+      back: "Atrás"
+      cancel: "Cancelar"
+      create: "Crear"
+      delete: "Borrar"
+      edit: "Editar"
+      new: "Nuevo"
+      update: "Actualizar"

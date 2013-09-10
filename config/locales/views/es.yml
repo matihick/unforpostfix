@@ -1,0 +1,26 @@
+es:
+  aliases:
+    edit:
+      title: "Editar alias"
+    new:
+      title: "Nuevo alias"
+  domains:
+    index:
+      title: "Dominios"
+    new:
+      title: "Nuevo dominio"
+  recipient_bccs:
+    edit:
+      title: "Editar receptor cco"
+    new:
+      title: "Nuevo receptor cco"
+  sender_bccs:
+    edit:
+      title: "Editar remitente cco"
+    new:
+      title: "Nuevo remitente cco"
+  users:
+    edit:
+      title: "Editar usuario"
+    new:
+      title: "Nuevo usuario"

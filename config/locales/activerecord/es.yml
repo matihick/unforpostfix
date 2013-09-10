@@ -1,0 +1,71 @@
+es:
+  activerecord:
+    models:
+      alias:
+        one: "Alias"
+        other: "Alias"
+      domain:
+        one: "Dominio"
+        other: "Dominios"
+      recipient_bcc:
+        one: "Receptor cco"
+        other: "Receptores cco"
+      sender_bcc:
+        one: "Remitente cco"
+        other: "Remitentes cco"
+      user:
+        one: "Usuario"
+        other: "Usuarios"
+    attributes:
+      alias:
+        created_at: "Fecha de creación"
+        domain_id: "Dominio"
+        enabled: "Habilitado"
+        from: "Desde"
+        id: "#"
+        to: "Hasta"
+      domain:
+        created_at: "Fecha de creación"
+        enabled: "Habilitado"
+        id: "#"
+        name: "Nombre"
+      recipient_bcc:
+        created_at: "Fecha de creación"
+        domain_id: "Dominio"
+        enabled: "Habilitado"
+        from: "Desde"
+        id: "#"
+        to: "Hasta"
+      sender_bcc:
+        created_at: "Fecha de creación"
+        domain_id: "Dominio"
+        enabled: "Habilitado"
+        from: "Desde"
+        id: "#"
+        to: "Hasta"
+      user:
+        created_at: "Fecha de creación"
+        domain_id: "Dominio"
+        email: "E-Mail"
+        enabled: "Habilitado"
+        id: "#"
+        name: "Nombre"
+        password: "Contraseña"
+        password_confirmation: "Confirmar contraseña"
+        unencrypted_password: "Contraseña"
+    errors:
+      messages:
+        blank: "No puede estar vacío"
+        taken: "En uso"
+        less_than: "Tiene que ser menor a %{count}"
+        less_than_or_equal_to: "Tiene que ser menor o igual a %{count}"
+        greater_than: "Tiene que ser mayor a %{count}"
+        greater_than_or_equal_to: "Tiene que ser mayor o igual a %{count}"
+        not_a_number: "No es un número"
+        too_short: "Tiene que tener al menos %{count} caracteres"
+        password_confirmation: "No se corresponde con la contraseña"
+        email: "No es un mail válido"
+        email_list: "Tiene mails inválidos"
+        domain: "No es un dominio válido"
+        does_not_match_domain: "Tiene que pertenecer al dominio"
+        has_to_be_different: "Tiene que ser distinto"
