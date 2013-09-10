@@ -6,6 +6,8 @@ class Domain < ActiveRecord::Base
   has_many :recipient_bccs, dependent: :destroy
   has_many :sender_bccs, dependent: :destroy
 
+  default_scope order(:name)
+
   def has_data?
     aliases.any? || users.any? || recipient_bccs.any? || sender_bccs.any?
   end

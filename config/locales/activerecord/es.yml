@@ -23,7 +23,7 @@ es:
         enabled: "Habilitado"
         from: "Desde"
         id: "#"
-        to: "Hasta"
+        to: "Hacia"
       domain:
         created_at: "Fecha de creación"
         enabled: "Habilitado"
@@ -35,14 +35,14 @@ es:
         enabled: "Habilitado"
         from: "Desde"
         id: "#"
-        to: "Hasta"
+        to: "Hacia"
       sender_bcc:
         created_at: "Fecha de creación"
         domain_id: "Dominio"
         enabled: "Habilitado"
         from: "Desde"
         id: "#"
-        to: "Hasta"
+        to: "Hacia"
       user:
         created_at: "Fecha de creación"
         domain_id: "Dominio"

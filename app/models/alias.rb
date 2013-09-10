@@ -8,6 +8,8 @@ class Alias < ActiveRecord::Base
 
   delegate :name, to: :domain, prefix: true
 
+  default_scope order(:from)
+
   before_validation :normalize_recipients
 
   def recipients

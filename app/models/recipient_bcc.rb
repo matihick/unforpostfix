@@ -8,6 +8,8 @@ class RecipientBcc < ActiveRecord::Base
 
   delegate :name, to: :domain, prefix: true
 
+  default_scope order(:from)
+
   private
 
   def from_and_to_are_different
