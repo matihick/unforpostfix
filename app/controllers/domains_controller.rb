@@ -43,7 +43,10 @@ class DomainsController < ApplicationController
 
   def destroy
     @domain = Domain.find(params[:id])
-    @domain.destroy
+
+    unless @domain.has_data?
+      @domain.destroy
+    end
 
     redirect_to root_path
   end

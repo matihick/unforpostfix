@@ -14,5 +14,7 @@
 
   <%= link_to_cancel root_path %>
   <%= f.submit class: 'btn btn-primary' %>
-  <%= link_to_delete domain_path(@domain) %>
+  <% unless @domain.has_data? %>
+    <%= link_to_delete domain_path(@domain) %>
+  <% end %>
 <% end %>
