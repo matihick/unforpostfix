@@ -1,0 +1,20 @@
+en:
+  bool:
+    falseval: "No"
+    trueval: "Yes"
+  date:
+    formats:
+      default: "%Y-%m-%d"
+  tables:
+    no_records: "No results found."
+  delete:
+    confirm: "Are you sure you want to delete this item?"
+  helpers:
+    submit:
+      back: "Back"
+      cancel: "Cancel"
+      create: "Create"
+      delete: "Delete"
+      edit: "Edit"
+      new: "New"
+      update: "Update"

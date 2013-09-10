@@ -1,0 +1,71 @@
+en:
+  activerecord:
+    models:
+      alias:
+        one: "Alias"
+        other: "Aliases"
+      domain:
+        one: "Domain"
+        other: "Domains"
+      recipient_bcc:
+        one: "Recipient bcc"
+        other: "Recipient bccs"
+      sender_bcc:
+        one: "Sender bcc"
+        other: "Sender bccs"
+      user:
+        one: "User"
+        other: "Users"
+    attributes:
+      alias:
+        created_at: "Date created"
+        domain_id: "Domain"
+        enabled: "Enabled"
+        from: "From"
+        id: "#"
+        to: "To"
+      domain:
+        created_at: "Date created"
+        enabled: "Enabled"
+        id: "#"
+        name: "Name"
+      recipient_bcc:
+        created_at: "Date created"
+        domain_id: "Domain"
+        enabled: "Enabled"
+        from: "From"
+        id: "#"
+        to: "To"
+      sender_bcc:
+        created_at: "Date created"
+        domain_id: "Domain"
+        enabled: "Enabled"
+        from: "From"
+        id: "#"
+        to: "To"
+      user:
+        created_at: "Date created"
+        domain_id: "Domain"
+        email: "E-Mail"
+        enabled: "Enabled"
+        id: "#"
+        name: "Name"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        unencrypted_password: "Password"
+    errors:
+      messages:
+        blank: "Can't be blank"
+        taken: "Already used"
+        less_than: "Should be less than %{count}"
+        less_than_or_equal_to: "Should be less than or equal to %{count}"
+        greater_than: "Should be greater than %{count}"
+        greater_than_or_equal_to: "Should be greater than or equal to %{count}"
+        not_a_number: "Is not a number"
+        too_short: "Should have at least %{count} characters"
+        password_confirmation: "Does not match with password"
+        email: "Is not a valid email"
+        email_list: "Has invalid emails"
+        domain: "Is not a valid domain name"
+        does_not_match_domain: "Has to belong to domain"
+        has_to_be_different: "Has to be different"

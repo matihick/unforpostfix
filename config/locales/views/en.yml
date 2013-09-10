@@ -1,0 +1,26 @@
+en:
+  aliases:
+    edit:
+      title: "Edit alias"
+    new:
+      title: "New alias"
+  domains:
+    index:
+      title: "Domains"
+    new:
+      title: "New domain"
+  recipient_bccs:
+    edit:
+      title: "Edit recipient bcc"
+    new:
+      title: "New recipient bcc"
+  sender_bccs:
+    edit:
+      title: "Edit sender bcc"
+    new:
+      title: "New sender bcc"
+  users:
+    edit:
+      title: "Edit user"
+    new:
+      title: "New user"
