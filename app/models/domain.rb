@@ -5,4 +5,8 @@ class Domain < ActiveRecord::Base
   has_many :users, dependent: :destroy
   has_many :recipient_bccs, dependent: :destroy
   has_many :sender_bccs, dependent: :destroy
+
+  def has_data?
+    aliases.any? || users.any? || recipient_bccs.any? || sender_bccs.any?
+  end
 end
