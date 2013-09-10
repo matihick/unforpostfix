@@ -27,9 +27,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem "puma", "~> 2.5.1"
+group :production do
+  gem "unicorn", "~> 4.6.3"
+end
 
 group :development do
+  gem "puma", "~> 2.5.1"
   gem "capistrano", "~> 2.15.5"
   gem "capistrano-ext", "~> 1.2.1"
 end
