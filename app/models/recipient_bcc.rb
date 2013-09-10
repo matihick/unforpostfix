@@ -4,10 +4,17 @@ class RecipientBcc < ActiveRecord::Base
   validates :from, presence: true, uniqueness: { case_sensitive: false }, email: true
   validates :to, presence: true, email: true
   validate :check_if_from_match_domain
+  validate :from_and_to_are_different
 
   delegate :name, to: :domain, prefix: true
 
   private
+
+  def from_and_to_are_different
+    if from == to
+      errors.add(:to, I18n.t('activerecord.errors.messages.has_to_be_different'))
+    end
+  end
 
   def check_if_from_match_domain
     unless from.ends_with? "@#{domain_name}"
