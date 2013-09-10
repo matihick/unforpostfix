@@ -1,0 +1,23 @@
+ENV['RAILS_ENV'] = 'production'
+worker_processes 1
+
+listen "<%="#{app_servers[get_current_host.to_sym][:host]}:#{app_servers[get_current_host.to_sym][:port]}"%>", :backlog => 2048
+timeout 60
+
+working_directory "<%=current_path%>"
+
+pid "<%="#{shared_path}/pids/unicorn.pid"%>"
+stderr_path "<%="#{shared_path}/log/unicorn-error.log"%>"
+stdout_path "<%="#{shared_path}/log/unicorn-access.log"%>"
+
+preload_app true
+
+before_fork do |server, worker|
+  defined?(ActiveRecord::Base) and
+    ActiveRecord::Base.connection.disconnect!
+end
+
+after_fork do |server, worker|
+  defined?(ActiveRecord::Base) and
+    ActiveRecord::Base.establish_connection
+end

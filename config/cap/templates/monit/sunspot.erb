@@ -1,0 +1,6 @@
+check process <%="#{application}-sunspot"%>
+  with pidfile <%="#{shared_path}/pids/sunspot-solr.pid"%>
+  group <%=application%>
+  start program = "<%="#{daemons_path}/#{application}-sunspot start"%>"
+    as uid <%=user%> and gid <%=user%>
+  stop program = "<%="#{daemons_path}/#{application}-sunspot stop"%>"

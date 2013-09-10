@@ -1,0 +1,6 @@
+check process <%="#{application}-#{service}"%>
+  with pidfile <%="#{shared_path}/pids/#{service}.pid"%>
+  group <%=application%>
+  start program = "<%="#{daemons_path}/#{application}-#{service} start"%>"
+    as uid <%=user%> and gid <%=user%>
+  stop program = "<%="#{daemons_path}/#{application}-#{service} stop"%>"

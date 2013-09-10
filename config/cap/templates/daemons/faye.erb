@@ -1,0 +1,47 @@
+#!/bin/bash
+
+PATH=<%= absolute_path(default_environment["PATH"], user) %>
+PIDFILE=<%= "#{shared_path}/pids/faye.pid" %>
+export RAILS_ENV=production
+
+getPID() {
+  if [ ! -z `cat $PIDFILE 2> /dev/null` ]; then
+    ps -ef | awk '{ print $2 }' | grep -w `cat $PIDFILE`
+  fi
+}
+
+case "$1" in
+  start)
+    echo -ne "<%= "Starting #{application}-faye..." %>"
+
+    if [ -z "$(getPID)" ]; then
+      cd <%=current_path%>
+      bundle exec rackup faye.ru -p <%=faye_port%> -s thin -E production -P $PIDFILE -D &> /dev/null
+
+      echo "started!"
+    else
+      echo "is already running!"
+    fi
+    ;;
+
+  stop)
+    echo -ne "<%= "Stopping #{application}-faye..." %>"
+
+    if [ -z "$(getPID)" ]; then
+      echo "is not running!"
+    else
+      kill -INT $(getPID) &> /dev/null
+
+      echo "stopped!"
+    fi
+    ;;
+
+  restart)
+    $0 stop
+    $0 start
+    ;;
+
+  *)
+    echo "usage: $0 {start|stop|restart}"
+esac
+exit 0
