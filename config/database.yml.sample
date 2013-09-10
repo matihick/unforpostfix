@@ -1,0 +1,9 @@
+development:
+  adapter: "mysql2"
+  username: "user"
+  password: "pwd"
+  host: "localhost"
+  database: "postfix"
+  encoding: utf8
+  collation: utf8_general_ci
+  pool: 5
