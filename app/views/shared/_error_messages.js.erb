@@ -1,0 +1,23 @@
+<% if object.valid? %>
+  location.href = '<%=target_path%>';
+<% else %>
+  <% (object.attribute_names + object.errors.keys.map(&:to_s)).uniq.each do |field| %>
+    <% if object.errors[field].any? %>
+      $('#<%=object.class.to_s.underscore%>_<%=field%>')
+        .parents('.form-group')
+        .addClass('has-error')
+        .find('.help-block')
+        .html('<%= j object.errors[field].first %>');
+    <% else %>
+      $('#<%=object.class.to_s.underscore%>_<%=field%>')
+        .parents('.form-group')
+        .find('.field-error')
+        .removeClass('has-error');
+
+      $('#<%=object.class.to_s.underscore%>_<%=field%>')
+        .parents('.form-group')
+        .find('.help-block')
+        .html('');
+    <% end %>
+  <% end %>
+<% end %>

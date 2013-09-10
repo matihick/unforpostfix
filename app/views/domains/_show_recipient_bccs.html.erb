@@ -1,0 +1,32 @@
+<div class="tab-pane fade" id="recipient_bccs">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><%= RecipientBcc.human_attribute_name :id %></th>
+        <th><%= RecipientBcc.human_attribute_name :from %></th>
+        <th><%= RecipientBcc.human_attribute_name :to %></th>
+        <th><%= RecipientBcc.human_attribute_name :enabled %></th>
+        <th><%= RecipientBcc.human_attribute_name :created_at %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% if @domain.recipient_bccs.empty? %>
+        <tr>
+          <td colspan="100%" class="text-center"><%=t('tables.no_records')%></td>
+        </tr>
+      <% end %>
+      <% @domain.recipient_bccs.each do |bcc| %>
+        <tr>
+          <td><%= link_to bcc.id, edit_recipient_bcc_path(bcc) %></td>
+          <td><%= bcc.from %></td>
+          <td><%= bcc.to %></td>
+          <td><%= bool_t(bcc.enabled) %></td>
+          <td><%= bcc.created_at.to_date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to_new new_domain_recipient_bcc_path(@domain) %>
+</div>

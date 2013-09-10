@@ -1,0 +1,30 @@
+<h3><%=t('.title')%></h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><%= Domain.human_attribute_name :id %></th>
+      <th><%= Domain.human_attribute_name :name %></th>
+      <th><%= Domain.human_attribute_name :enabled %></th>
+      <th><%= Domain.human_attribute_name :created_at %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @domains.empty? %>
+      <tr>
+        <td colspan="100%" class="text-center"><%=t('tables.no_records')%></td>
+      </tr>
+    <% end %>
+    <% @domains.each do |domain| %>
+      <tr>
+        <td><%= link_to domain.id, domain_path(domain) %></td>
+        <td><%= domain.name %></td>
+        <td><%= bool_t(domain.enabled) %></td>
+        <td><%= domain.created_at.to_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to_new new_domain_path %>

@@ -1,0 +1,32 @@
+<div class="tab-pane fade" id="aliases">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><%= Alias.human_attribute_name :id %></th>
+        <th><%= Alias.human_attribute_name :from %></th>
+        <th><%= Alias.human_attribute_name :to %></th>
+        <th><%= Alias.human_attribute_name :enabled %></th>
+        <th><%= Alias.human_attribute_name :created_at %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% if @domain.aliases.empty? %>
+        <tr>
+          <td colspan="100%" class="text-center"><%=t('tables.no_records')%></td>
+        </tr>
+      <% end %>
+      <% @domain.aliases.each do |ali| %>
+        <tr>
+          <td><%= link_to ali.id, edit_alias_path(ali) %></td>
+          <td><%= ali.from %></td>
+          <td><%= normalize_alias_recipients(ali.recipients) %></td>
+          <td><%= bool_t(ali.enabled) %></td>
+          <td><%= ali.created_at.to_date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to_new new_domain_alias_path(@domain) %>
+</div>

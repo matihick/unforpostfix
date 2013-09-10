@@ -1,0 +1,34 @@
+<div class="breadcrumb-container">
+  <ul class="breadcrumb">
+    <li><%= link_to Domain.model_name.human(count: 2), root_path %></li>
+    <li class="active"><%=@domain.name%></li>
+  </ul>
+</div>
+
+<%= render 'form' %>
+
+<hr />
+
+<div class="nav-container">
+  <ul class="nav nav-tabs">
+    <li class="active users-tab">
+      <a href="#users" data-toggle="tab"><%=User.model_name.human(count: 2)%></a>
+    </li>
+    <li class="aliases-tab">
+      <a href="#aliases" data-toggle="tab"><%=Alias.model_name.human(count: 2)%></a>
+    </li>
+    <li class="sender_bccs-tab">
+      <a href="#sender_bccs" data-toggle="tab"><%=SenderBcc.model_name.human(count: 2)%></a>
+    </li>
+    <li class="recipient_bccs-tab">
+      <a href="#recipient_bccs" data-toggle="tab"><%=RecipientBcc.model_name.human(count: 2)%></a>
+    </li>
+  </ul>
+</div>
+
+<div class="tab-content">
+  <%= render 'show_users' %>
+  <%= render 'show_aliases' %>
+  <%= render 'show_sender_bccs' %>
+  <%= render 'show_recipient_bccs' %>
+</div>
