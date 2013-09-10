@@ -20,7 +20,7 @@ class AliasesController < ApplicationController
   end
 
   def edit
-    @alias.to = @alias.to.split(',').each_slice(4).map { |elem| elem.join(', ') }.join("\r\n")
+    @alias.to = @alias.to.split(',').each_slice(3).map { |elem| elem.join(', ') }.join("\r\n")
     @form_object = @alias
   end
 

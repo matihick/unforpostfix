@@ -7,7 +7,7 @@ module ButtonsHelper
   end
 
   def link_to_delete(path, args={})
-    defaults = { class: 'btn btn-danger', method: 'delete', data: { confirm: I18n.t('delete.confirm') } }
+    defaults = { class: 'btn btn-danger', method: 'delete', data: { confirm: I18n.t('confirm.delete') } }
     args = defaults.merge(args)
 
     raw(link_to(I18n.t('helpers.submit.delete'), path, args))
