@@ -16,7 +16,7 @@
     <%= f.check_box :enabled %>
   </div>
 
-  <%= link_to_cancel domain_path(@domain, anchor: 'aliases') %>
+  <%= link_to_cancel domain_path(@domain, anchor: 'sender_bccs') %>
   <%= f.submit class: 'btn btn-primary' %>
   <%= link_to_delete sender_bcc_path(@sender_bcc) %>
 <% end %>
