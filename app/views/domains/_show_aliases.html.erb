@@ -20,7 +20,13 @@
         <tr>
           <td><%= link_to ali.id, edit_alias_path(ali) %></td>
           <td><%= ali.from %></td>
-          <td><%= normalize_alias_recipients(ali.recipients) %></td>
+          <td>
+            <% if ali.recipients.count > 2 %>
+              <%= link_to "#{ali.recipients.first(2).join(', ')}, ...", alias_path(ali), class: 'fancybox' %>
+            <% else %>
+              <%= ali.recipients.join(', ') %>
+            <% end %>
+          </td>
           <td><%= bool_t(ali.enabled) %></td>
           <td><%= ali.created_at.to_date %></td>
         </tr>

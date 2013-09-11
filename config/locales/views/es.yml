@@ -4,6 +4,8 @@ es:
       title: "Editar alias"
     new:
       title: "Nuevo alias"
+    show:
+      title: "Destinatarios de %{from}"
   domains:
     index:
       title: "Dominios"

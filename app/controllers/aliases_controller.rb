@@ -1,6 +1,10 @@
 class AliasesController < ApplicationController
   before_action :load_domain
 
+  def show
+    render layout: 'modal'
+  end
+
   def new
     @alias = @domain.aliases.build(enabled: true)
     @form_object = [@domain, @alias]

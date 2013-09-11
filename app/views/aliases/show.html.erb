@@ -1,0 +1,7 @@
+<h3><%=t('.title', from: @alias.from)%></h3>
+
+<ul class="recipients">
+  <% @alias.recipients.each do |recipient| %>
+  <li><%=recipient%></li>
+  <% end %>
+</ul>

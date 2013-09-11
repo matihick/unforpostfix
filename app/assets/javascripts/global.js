@@ -12,4 +12,13 @@ $(function () {
     $('.tab-pane').removeClass('active in');
     $(activeTabPane).addClass('active in');
   }
+
+  $('a.fancybox').fancybox({
+    autoSize    : true,
+    closeClick  : true,
+    fitToView   : true,
+    openEffect  : true,
+    closeEffect : true,
+    type : 'iframe'
+  });
 });
