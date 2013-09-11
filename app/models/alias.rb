@@ -20,7 +20,7 @@ class Alias < ActiveRecord::Base
 
   def normalize_recipients
     self.to = to.strip.gsub(/\r\n?/, ",").gsub(';',',')
-    self.to = to.split(',').reject(&:empty?).map(&:strip).uniq.sort.join(',').strip
+    self.to = to.split(',').map(&:strip).reject(&:empty?).uniq.sort.join(',')
   end
 
   def from_and_to_are_different
