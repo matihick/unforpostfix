@@ -22,7 +22,7 @@
           <td><%= bcc.from %></td>
           <td><%= bcc.to %></td>
           <td><%= bool_t(bcc.enabled) %></td>
-          <td><%= bcc.created_at.to_date %></td>
+          <td><%= l bcc.created_at %></td>
         </tr>
       <% end %>
     </tbody>

@@ -7,7 +7,7 @@ en:
     update_domain: "Are you sure you want to update the domain?"
   date:
     formats:
-      default: "%Y-%m-%d"
+      default: ! '%Y-%m-%d'
   tables:
     no_records: "No results found."
   helpers:
@@ -19,3 +19,6 @@ en:
       edit: "Edit"
       new: "New"
       update: "Update"
+  time:
+    formats:
+      default: ! '%Y-%m-%d %H:%M:%S'

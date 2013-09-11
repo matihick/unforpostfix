@@ -7,7 +7,7 @@ es:
     update_domain: "Está seguro que desea actualizar el dominio?"
   date:
     formats:
-      default: "%d/%m/%Y"
+      default: ! '%d/%m/%Y'
   tables:
     no_records: "No se encontraron resultados."
   helpers:
@@ -19,3 +19,6 @@ es:
       edit: "Editar"
       new: "Nuevo"
       update: "Actualizar"
+  time:
+    formats:
+      default: ! '%d/%m/%Y %H:%M:%S'
