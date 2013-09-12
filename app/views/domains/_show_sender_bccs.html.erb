@@ -1,4 +1,8 @@
 <div class="tab-pane fade" id="sender_bccs">
+  <div class="actions-pane">
+    <%= link_to_new new_domain_sender_bcc_path(@domain) %>
+  </div>
+
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -27,6 +31,4 @@
       <% end %>
     </tbody>
   </table>
-
-  <%= link_to_new new_domain_sender_bcc_path(@domain) %>
 </div>

@@ -14,9 +14,11 @@
 
   <% if @domain.new_record? %>
     <%= link_to_cancel root_path %>
+    <%= f.submit class: 'btn btn-primary' %>
+  <% else %>
+    <%= f.submit class: 'btn btn-primary', data: { confirm: I18n.t('confirm.update_domain') } %>
   <% end %>
 
-  <%= f.submit class: 'btn btn-primary', data: { confirm: I18n.t('confirm.update_domain') } %>
   <% unless @domain.has_data? %>
     <%= link_to_delete domain_path(@domain) %>
   <% end %>
