@@ -43,6 +43,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    commonjs (0.2.7)
     erubis (2.7.0)
     execjs (2.0.1)
     fancybox2-rails (0.2.4)
@@ -58,6 +59,13 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.0)
     kgio (2.8.0)
+    less (2.4.0)
+      commonjs (~> 0.2.7)
+    less-rails (2.4.2)
+      actionpack (>= 3.1)
+      less (~> 2.4.0)
+    less-rails-bootstrap (3.0.3)
+      less-rails (~> 2.4.2)
     libv8 (3.3.10.4)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -141,6 +149,7 @@ DEPENDENCIES
   fancybox2-rails (~> 0.2.4)
   jbuilder (~> 1.2)
   jquery-rails
+  less-rails-bootstrap (~> 3.0.3)
   mysql2 (~> 0.3.13)
   puma (~> 2.5.1)
   rails (= 4.0.0)

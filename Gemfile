@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem "fancybox2-rails", "~> 0.2.4"
 
+gem "less-rails-bootstrap", "~> 3.0.3"
+
 group :doc do
   gem 'sdoc', require: false
 end
