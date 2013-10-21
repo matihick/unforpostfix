@@ -22,7 +22,7 @@ set :application, 'postfixman'
 set :deploy_to, "/home/#{user}/postfixman"
 
 # stages of deployment
-set :stages, %w(lhconfort segurocomar unformatt)
+set :stages, %w(lhconfort segurocomar unformatt triplemsales)
 set :default_stage, 'unformatt'
 # path to configuration templates
 set :templates_path, "config/cap/templates"
@@ -36,7 +36,7 @@ set :monit_scripts_path, '/etc/monit/conf.d'
 
 set :nginx_path, '/etc/nginx'
 set :nginx_read_timeout, '60'
-set :nginx_use_ssl, true
+set :nginx_use_ssl, false
 # ssl certificate paths (uncomment if you use ssl)
 set :nginx_ssl_private_key, '/etc/ssl/private/star_seguro_com_ar.key'
 set :nginx_ssl_certificate, '/etc/ssl/certs/star_seguro_com_ar_chained.crt'
