@@ -12,11 +12,16 @@
   </div>
 
   <div class="checkbox">
-    <%= f.label :enabled %>
-    <%= f.check_box :enabled %>
+    <label>
+      <%= f.check_box :enabled %>
+      <%= Alias.human_attribute_name :enabled %>
+    </label>
   </div>
 
   <%= link_to_cancel domain_path(@domain, anchor: 'aliases') %>
   <%= f.submit class: 'btn btn-primary' %>
-  <%= link_to_delete alias_path(@alias) %>
+
+  <% unless @alias.new_record? %>
+    <%= link_to_delete alias_path(@alias) %>
+  <% end  %>
 <% end %>

@@ -8,8 +8,10 @@
   <% end %>
 
   <div class="checkbox">
-    <%= f.label :enabled %>
-    <%= f.check_box :enabled %>
+    <label>
+      <%= f.check_box :enabled %>
+      <%= Domain.human_attribute_name :enabled %>
+    </label>
   </div>
 
   <% if @domain.new_record? %>

@@ -12,11 +12,15 @@
   </div>
 
   <div class="checkbox">
-    <%= f.label :enabled %>
-    <%= f.check_box :enabled %>
+    <label>
+      <%= f.check_box :enabled %>
+      <%= SenderBcc.human_attribute_name :enabled %>
+    </label>
   </div>
 
   <%= link_to_cancel domain_path(@domain, anchor: 'sender_bccs') %>
   <%= f.submit class: 'btn btn-primary' %>
-  <%= link_to_delete sender_bcc_path(@sender_bcc) %>
+  <% unless @recipient_bcc.new_record? %>
+    <%= link_to_delete sender_bcc_path(@recipient_bcc) %>
+  <% end %>
 <% end %>

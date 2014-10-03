@@ -22,11 +22,16 @@
   </div>
 
   <div class="checkbox">
-    <%= f.label :enabled %>
-    <%= f.check_box :enabled %>
+    <label>
+      <%= f.check_box :enabled %>
+      <%= User.human_attribute_name :enabled %>
+    </label>
   </div>
 
   <%= link_to_cancel domain_path(@domain, anchor: 'users') %>
   <%= f.submit class: 'btn btn-primary' %>
-  <%= link_to_delete user_path(@user) %>
+
+  <% unless @user.new_record? %>
+    <%= link_to_delete user_path(@user) %>
+  <% end %>
 <% end %>
