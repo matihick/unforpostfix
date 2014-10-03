@@ -8,7 +8,7 @@ class RecipientBcc < ActiveRecord::Base
 
   delegate :name, to: :domain, prefix: true
 
-  default_scope order(:from)
+  default_scope -> { order(:from) }
 
   private
 

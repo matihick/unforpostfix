@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   delegate :name, to: :domain, prefix: true
 
-  default_scope order(:name)
+  default_scope -> { order(:name) }
 
   private
 
