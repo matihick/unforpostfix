@@ -27,7 +27,7 @@ set :default_stage, 'unformatt'
 # path to configuration templates
 set :templates_path, "config/cap/templates"
 # list of ymls used
-set :ymls, [:database, :settings]
+set :ymls, [:database, :settings, :secrets]
 # list of daemons used
 set :daemons, [:unicorn]
 
