@@ -6,16 +6,37 @@ en:
       title: "New alias"
     show:
       title: "Recipients for %{from}"
+  client_accesses:
+    index:
+      title: "Client accesses"
+    new:
+      title: "New client access"
+    edit:
+      title: "Edit client access"
   domains:
     index:
       title: "Domains"
     new:
       title: "New domain"
+  recipient_accesses:
+    index:
+      title: "Recipient accesses"
+    new:
+      title: "New recipient access"
+    edit:
+      title: "Edit recipient access"
   recipient_bccs:
     edit:
       title: "Edit recipient bcc"
     new:
       title: "New recipient bcc"
+  sender_accesses:
+    index:
+      title: "Sender accesses"
+    new:
+      title: "New sender access"
+    edit:
+      title: "Edit sender access"
   sender_bccs:
     edit:
       title: "Edit sender bcc"

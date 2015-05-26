@@ -6,16 +6,37 @@ es:
       title: "Nuevo alias"
     show:
       title: "Destinatarios de %{from}"
+  client_accesses:
+    index:
+      title: "Restricción de clientes"
+    new:
+      title: "Nueva restricción de cliente"
+    edit:
+      title: "Editar restricción de cliente"
   domains:
     index:
       title: "Dominios"
     new:
       title: "Nuevo dominio"
+  recipient_accesses:
+    index:
+      title: "Restricción de receptores"
+    new:
+      title: "Nueva restricción de receptor"
+    edit:
+      title: "Editar restricción de receptor"
   recipient_bccs:
     edit:
       title: "Editar receptor cco"
     new:
       title: "Nuevo receptor cco"
+  sender_accesses:
+    index:
+      title: "Restricción de emisores"
+    new:
+      title: "Nueva restricción de emisor"
+    edit:
+      title: "Editar restricción de emisor"
   sender_bccs:
     edit:
       title: "Editar remitente cco"

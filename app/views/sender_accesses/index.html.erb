@@ -1,0 +1,32 @@
+<h3><%=t('.title')%></h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><%= SenderAccess.human_attribute_name :id %></th>
+      <th><%= SenderAccess.human_attribute_name :name %></th>
+      <th><%= SenderAccess.human_attribute_name :status %></th>
+      <th><%= SenderAccess.human_attribute_name :reject_note %></th>
+      <th><%= SenderAccess.human_attribute_name :enabled %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @sender_accesses.empty? %>
+      <tr>
+        <td colspan="100%" class="text-center"><%=t('tables.no_records')%></td>
+      </tr>
+    <% end %>
+    <% @sender_accesses.each do |sender_access| %>
+      <tr>
+        <td><%= link_to sender_access.id, edit_sender_access_path(sender_access) %></td>
+        <td><%= sender_access.name %></td>
+        <td><%= I18n.t("access_status.#{sender_access.status}") %></td>
+        <td><%= sender_access.reject_note %></td>
+        <td><%= bool_t(sender_access.enabled) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to_new new_sender_access_path %>

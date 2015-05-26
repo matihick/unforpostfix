@@ -24,11 +24,25 @@ es:
         from: "Desde"
         id: "#"
         to: "Hacia"
+      client_access:
+        name: "Nombre"
+        status: "Estado"
+        reject_note: "Nota de rechazo"
+        rule: "Regla"
+        observations: "Observaciones"
+        enabled: "Habilitado"
       domain:
         created_at: "Fecha de creación"
         enabled: "Habilitado"
         id: "#"
         name: "Nombre"
+      recipient_access:
+        name: "Nombre"
+        status: "Estado"
+        reject_note: "Nota de rechazo"
+        rule: "Regla"
+        observations: "Observaciones"
+        enabled: "Habilitado"
       recipient_bcc:
         created_at: "Fecha de creación"
         domain_id: "Dominio"
@@ -36,6 +50,13 @@ es:
         from: "Desde"
         id: "#"
         to: "Hacia"
+      sender_access:
+        name: "Nombre"
+        status: "Estado"
+        reject_note: "Nota de rechazo"
+        rule: "Regla"
+        observations: "Observaciones"
+        enabled: "Habilitado"
       sender_bcc:
         created_at: "Fecha de creación"
         domain_id: "Dominio"

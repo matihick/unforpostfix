@@ -11,7 +11,7 @@ set :default_environment, {
 set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
 
 set :scm, :git
-set :repository, 'git@github.com:unformattmh/postfixman.git'
+set :repository, 'git@github.com:unformattmh/postfixman-backend.git'
 set :branch, :master
 
 set :deploy_via, :remote_cache

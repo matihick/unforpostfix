@@ -18,7 +18,7 @@ class DomainsController < ApplicationController
     respond_to do |format|
       format.js do
         render partial: 'shared/error_messages', locals: {
-          object: @domain, target_path: root_path
+          object: @domain, target_path: domains_path
         }
       end
     end
@@ -35,7 +35,7 @@ class DomainsController < ApplicationController
     respond_to do |format|
       format.js do
         render partial: 'shared/error_messages', locals: {
-          object: @domain, target_path: root_path
+          object: @domain, target_path: domains_path
         }
       end
     end
@@ -48,7 +48,7 @@ class DomainsController < ApplicationController
       @domain.destroy
     end
 
-    redirect_to root_path
+    redirect_to domains_path
   end
 
   protected

@@ -1,0 +1,15 @@
+<div class="navbar-collapse collapse" id="navbar-main">
+  <ul class="nav navbar-nav">
+    <li class="dropdown menu-list" data-menu="menu">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Administracion <span class="caret"></span></a>
+      <ul class="dropdown-menu" aria-labelledby="themes">
+        <li>
+          <%= link_to 'Dominios', domains_path, tabindex: -1 %>
+          <%= link_to 'Restricción de clientes', client_accesses_path, tabindex: -1 %>
+          <%= link_to 'Restricción de emisores', sender_accesses_path, tabindex: -1 %>
+          <%= link_to 'Restricción de receptores', recipient_accesses_path, tabindex: -1 %>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

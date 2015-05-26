@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-5">
+    <%= form_for @client_access, remote: true, html: {role: :form} do |f| %>
+      <div class="form-group">
+        <%= f.label :name, class: 'control-label' %>
+        <%= f.text_field :name, class: 'form-control', autofocus: true %>
+        <span class="help-block"></span>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :status, class: 'control-label' %>
+        <%= f.select :status, @statuses, { }, class: 'form-control' %>
+        <span class="help-block"></span>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :reject_note, class: 'control-label' %>
+        <%= f.text_field :reject_note, class: 'form-control' %>
+        <span class="help-block"></span>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :observations, class: 'control-label' %>
+        <%= f.text_area :observations, class: 'form-control' %>
+        <span class="help-block"></span>
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <%= f.check_box :enabled %>
+          <%= ClientAccess.human_attribute_name :enabled %>
+        </label>
+      </div>
+
+      <%= link_to_cancel client_accesses_path %>
+      <%= f.submit class: 'btn btn-primary' %>
+
+      <% unless @client_access.new_record? %>
+        <%= link_to_delete client_access_path(@client_access) %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

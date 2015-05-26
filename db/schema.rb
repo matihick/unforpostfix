@@ -11,12 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130910124603) do
+ActiveRecord::Schema.define(version: 20150526154456) do
 
   create_table "aliases", force: true do |t|
     t.integer  "domain_id"
     t.string   "from"
     t.text     "to"
+    t.boolean  "enabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "client_accesses", force: true do |t|
+    t.string   "name"
+    t.string   "status"
+    t.string   "reject_note"
+    t.string   "rule"
+    t.text     "observations"
     t.boolean  "enabled"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -29,6 +40,17 @@ ActiveRecord::Schema.define(version: 20130910124603) do
     t.datetime "updated_at"
   end
 
+  create_table "recipient_accesses", force: true do |t|
+    t.string   "name"
+    t.string   "status"
+    t.string   "reject_note"
+    t.string   "rule"
+    t.text     "observations"
+    t.boolean  "enabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "recipient_bccs", force: true do |t|
     t.string   "from"
     t.string   "to"
@@ -36,6 +58,17 @@ ActiveRecord::Schema.define(version: 20130910124603) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "domain_id"
+  end
+
+  create_table "sender_accesses", force: true do |t|
+    t.string   "name"
+    t.string   "status"
+    t.string   "reject_note"
+    t.string   "rule"
+    t.text     "observations"
+    t.boolean  "enabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sender_bccs", force: true do |t|

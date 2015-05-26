@@ -10,6 +10,9 @@ es:
       default: ! '%d/%m/%Y'
   tables:
     no_records: "No se encontraron resultados."
+  access_status:
+    reject: 'Rechazar'
+    ok: 'Admitir'
   helpers:
     submit:
       back: "Atrás"

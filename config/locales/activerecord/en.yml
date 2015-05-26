@@ -4,12 +4,21 @@ en:
       alias:
         one: "Alias"
         other: "Aliases"
+      client_access:
+        one: "Restricción de cliente"
+        other: "Restricción de clientes"
       domain:
         one: "Domain"
         other: "Domains"
+      recipient_access:
+        one: "Restricción de receptor"
+        other: "Restricción de receptores"
       recipient_bcc:
         one: "Recipient bcc"
         other: "Recipient bccs"
+      sender_access:
+        one: "Restricción de emisor"
+        other: "Restricción de emisores"
       sender_bcc:
         one: "Sender bcc"
         other: "Sender bccs"
@@ -24,11 +33,25 @@ en:
         from: "From"
         id: "#"
         to: "To"
+      client_access:
+        name: "Name"
+        status: "Status"
+        reject_note: "Reject note"
+        rule: "Rule"
+        observations: "Observations"
+        enabled: "Enabled"
       domain:
         created_at: "Date created"
         enabled: "Enabled"
         id: "#"
         name: "Name"
+      recipient_access:
+        name: "Name"
+        status: "Status"
+        reject_note: "Reject note"
+        rule: "Rule"
+        observations: "Observations"
+        enabled: "Enabled"
       recipient_bcc:
         created_at: "Date created"
         domain_id: "Domain"
@@ -36,6 +59,13 @@ en:
         from: "From"
         id: "#"
         to: "To"
+      sender_access:
+        name: "Name"
+        status: "Status"
+        reject_note: "Reject note"
+        rule: "Rule"
+        observations: "Observations"
+        enabled: "Enabled"
       sender_bcc:
         created_at: "Date created"
         domain_id: "Domain"

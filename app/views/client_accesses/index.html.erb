@@ -1,0 +1,32 @@
+<h3><%=t('.title')%></h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><%= ClientAccess.human_attribute_name :id %></th>
+      <th><%= ClientAccess.human_attribute_name :name %></th>
+      <th><%= ClientAccess.human_attribute_name :status %></th>
+      <th><%= ClientAccess.human_attribute_name :reject_note %></th>
+      <th><%= ClientAccess.human_attribute_name :enabled %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @client_accesses.empty? %>
+      <tr>
+        <td colspan="100%" class="text-center"><%=t('tables.no_records')%></td>
+      </tr>
+    <% end %>
+    <% @client_accesses.each do |client_access| %>
+      <tr>
+        <td><%= link_to client_access.id, edit_client_access_path(client_access) %></td>
+        <td><%= client_access.name %></td>
+        <td><%= I18n.t("access_status.#{client_access.status}") %></td>
+        <td><%= client_access.reject_note %></td>
+        <td><%= bool_t(client_access.enabled) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to_new new_client_access_path %>
