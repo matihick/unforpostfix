@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.10'
+gem 'rails', '4.2.1'
 
 gem "mysql2", "~> 0.3.18"
 
@@ -18,7 +18,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer', "~> 0.12.2"
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '~> 3.1.2'
+gem 'jquery-rails', '~> 4.0.3'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.2.16'
@@ -39,4 +39,5 @@ group :development do
   gem "puma", "~> 2.11.3"
   gem "capistrano", "~> 2.15.5"
   gem "capistrano-ext", "~> 1.2.1"
+  gem "web-console", "~> 2.1.2"
 end
