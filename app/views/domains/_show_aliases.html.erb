@@ -7,6 +7,7 @@
     <thead>
       <tr>
         <th><%= Alias.human_attribute_name :id %></th>
+        <th><%= Alias.human_attribute_name :name %></th>
         <th><%= Alias.human_attribute_name :from %></th>
         <th><%= Alias.human_attribute_name :to %></th>
         <th><%= Alias.human_attribute_name :enabled %></th>
@@ -23,6 +24,7 @@
       <% @domain.aliases.each do |ali| %>
         <tr>
           <td><%= link_to ali.id, edit_alias_path(ali) %></td>
+          <td><%= ali.name %></td>
           <td><%= ali.from %></td>
           <td>
             <% if ali.recipients.count > 2 %>

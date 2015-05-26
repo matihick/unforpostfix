@@ -45,6 +45,5 @@ set :nginx_ssl_certificate, '/etc/ssl/certs/star_seguro_com_ar_chained.crt'
 set :app_servers, {
   lhconfort: { host: '127.0.0.1', port: '3000' },
   segurocomar: { host: '127.0.0.1', port: '3030' },
-  triplemsales: { host: '127.0.0.1', port: '3030' },
   unformatt: { host: '127.0.0.1', port: '3000' }
 }
