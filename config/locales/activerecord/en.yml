@@ -33,6 +33,7 @@ en:
         from: "From"
         id: "#"
         to: "To"
+        name: "Name"
       client_access:
         name: "Name"
         status: "Status"

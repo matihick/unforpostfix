@@ -24,6 +24,7 @@ es:
         from: "Desde"
         id: "#"
         to: "Hacia"
+        name: "Nombre"
       client_access:
         name: "Nombre"
         status: "Estado"

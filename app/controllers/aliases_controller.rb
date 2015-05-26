@@ -49,7 +49,7 @@ class AliasesController < ApplicationController
   protected
 
   def permitted_params
-    params[:alias].permit(:from, :to, :enabled)
+    params[:alias].permit(:name, :from, :to, :enabled)
   end
 
   def load_domain

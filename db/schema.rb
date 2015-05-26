@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526154456) do
+ActiveRecord::Schema.define(version: 20150526224829) do
 
   create_table "aliases", force: true do |t|
     t.integer  "domain_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150526154456) do
     t.boolean  "enabled"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "client_accesses", force: true do |t|
