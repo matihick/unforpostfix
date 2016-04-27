@@ -16,6 +16,9 @@ es:
       user:
         one: "Usuario"
         other: "Usuarios"
+      workgroups:
+        one: "Grupo de trabajo"
+        other: "Grupos de trabajo"
     attributes:
       alias:
         created_at: "Fecha de creación"
@@ -37,6 +40,7 @@ es:
         enabled: "Habilitado"
         id: "#"
         name: "Nombre"
+        workgroup_id: "Grupo de trabajo"
       recipient_access:
         name: "Nombre"
         status: "Estado"
@@ -75,6 +79,9 @@ es:
         password: "Contraseña"
         password_confirmation: "Confirmar contraseña"
         unencrypted_password: "Contraseña"
+        role_code: "Rol"
+      workgroup:
+        name: "Nombre"
     errors:
       messages:
         blank: "No puede estar vacío"

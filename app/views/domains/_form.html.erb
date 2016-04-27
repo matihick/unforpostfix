@@ -1,27 +1,39 @@
-<%= form_for @domain, remote: true, html: {role: :form} do |f| %>
-  <% if @domain.new_record? %>
-    <div class="form-group">
-      <%= f.label :name, class: 'control-label' %>
-      <%= f.text_field :name, class: 'form-control', autofocus: true %>
-      <span class="help-block"></span>
-    </div>
-  <% end %>
+<div class="row">
+  <div class="col-md-4">
+    <%= form_for @domain, remote: true, html: {role: :form} do |f| %>
+      <% if @domain.new_record? %>
+        <div class="form-group">
+          <%= f.label :name, class: 'control-label' %>
+          <%= f.text_field :name, class: 'form-control', autofocus: true %>
+          <span class="help-block"></span>
+        </div>
+      <% end %>
 
-  <div class="checkbox">
-    <label>
-      <%= f.check_box :enabled %>
-      <%= Domain.human_attribute_name :enabled %>
-    </label>
+      <div class="checkbox">
+        <label>
+          <%= f.check_box :enabled %>
+          <%= Domain.human_attribute_name :enabled %>
+        </label>
+      </div>
+
+      <% if current_user.has_role?(:administrator) %>
+        <div class="form-group">
+          <%= f.label :workgroup_id, class: 'control-label' %>
+          <%= f.select :workgroup_id, @workgroups.map { |x| [x.name, x.id] }, { include_blank: true }, class: 'form-control' %>
+          <span class="help-block"></span>
+        </div>
+      <% end %>
+
+      <% if @domain.new_record? %>
+        <%= link_to_cancel root_path %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% else %>
+        <%= f.submit class: 'btn btn-primary', data: { confirm: I18n.t('confirm.update_domain') } %>
+      <% end %>
+
+      <% unless @domain.new_record? || @domain.has_data? %>
+        <%= link_to_delete domain_path(@domain) %>
+      <% end %>
+    <% end %>
   </div>
-
-  <% if @domain.new_record? %>
-    <%= link_to_cancel root_path %>
-    <%= f.submit class: 'btn btn-primary' %>
-  <% else %>
-    <%= f.submit class: 'btn btn-primary', data: { confirm: I18n.t('confirm.update_domain') } %>
-  <% end %>
-
-  <% unless @domain.new_record? || @domain.has_data? %>
-    <%= link_to_delete domain_path(@domain) %>
-  <% end %>
-<% end %>
+</div>

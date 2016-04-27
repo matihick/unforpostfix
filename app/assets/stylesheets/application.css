@@ -1,5 +1,8 @@
 /*
- *= require custom_bootstrap/custom_bootstrap
+ *= require ./custom_bootstrap
+ *= require bootstrap-datepicker
+ *= require select2
+ *= require select2-bootstrap
  *= require fancybox
- *= require ./global
+ *= require_directory ./global
  */

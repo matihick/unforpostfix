@@ -29,3 +29,25 @@ textarea {
 .actions-pane {
   margin-bottom: 10px;
 }
+
+.form-signin {
+  width: 300px;
+  float:none;
+  margin:0 auto;
+}
+
+.invalid-login {
+  color:red;
+  font-weight: bold;
+  margin:0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.centered {
+  text-align: center !important;
+}
+
+.login-body {
+  padding-top: 10px;
+}

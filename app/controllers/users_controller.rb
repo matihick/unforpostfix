@@ -4,6 +4,8 @@ class UsersController < ApplicationController
   def new
     @user = @domain.users.build(enabled: true)
     @form_object = [@domain, @user]
+
+    @roles = Role.all
   end
 
   def create
@@ -21,6 +23,8 @@ class UsersController < ApplicationController
 
   def edit
     @form_object = @user
+
+    @roles = Role.all
   end
 
   def update
@@ -44,7 +48,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = @domain.users.find(params[:id])
+    @user = @domain.users.where('role_code <> ?', 'administrator').find(params[:id])
     @user.destroy
 
     redirect_to domain_path(@domain)
@@ -53,7 +57,11 @@ class UsersController < ApplicationController
   protected
 
   def permitted_params
-    params[:user].permit(:name, :email, :unencrypted_password, :password_confirmation, :enabled)
+    if current_user.has_role?(:administrator)
+      params[:user].permit(:name, :email, :unencrypted_password, :password_confirmation, :enabled, :role_code)
+    else
+      params[:user].permit(:name, :email, :unencrypted_password, :password_confirmation, :enabled)
+    end
   end
 
   def load_domain

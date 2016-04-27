@@ -47,3 +47,12 @@ en:
       title: "Edit user"
     new:
       title: "New user"
+  workgroups:
+    index:
+      title: "Workgroups"
+    edit:
+      title: "Edit workgroup"
+      collection_title: "Workgroups"
+    new:
+      title: "New workgroup"
+      collection_title: "Workgroups"

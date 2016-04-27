@@ -1,14 +1,28 @@
 class DomainsController < ApplicationController
+  before_action :check_if_administrator, except: [:index, :show]
+
   def index
     @domains = Domain.all
+
+    unless current_user.has_role?(:administrator)
+      if current_user.domain.workgroup_id.present?
+        @domains.where!({workgroup_id: current_user.domain.workgroup_id })
+      else
+        @domains = []
+      end
+    end
   end
 
   def show
     @domain = Domain.find(params[:id])
+
+    @workgroups = Workgroup.all
   end
 
   def new
     @domain = Domain.new(enabled: true)
+
+    @workgroups = Workgroup.all
   end
 
   def create
@@ -22,10 +36,6 @@ class DomainsController < ApplicationController
         }
       end
     end
-  end
-
-  def edit
-    @domain = Domain.find(params[:id])
   end
 
   def update
@@ -54,6 +64,6 @@ class DomainsController < ApplicationController
   protected
 
   def permitted_params
-    params[:domain].permit(:name, :enabled)
+    params[:domain].permit(:name, :enabled, :workgroup_id)
   end
 end

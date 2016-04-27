@@ -5,7 +5,9 @@
   </ul>
 </div>
 
-<%= render 'form' %>
+<% if current_user.has_role?(:administrator) %>
+  <%= render 'form' %>
+<% end %>
 
 <hr />
 

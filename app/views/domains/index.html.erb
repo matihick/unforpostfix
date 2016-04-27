@@ -5,6 +5,7 @@
     <tr>
       <th><%= Domain.human_attribute_name :id %></th>
       <th><%= Domain.human_attribute_name :name %></th>
+      <th><%= Domain.human_attribute_name :workgroup_id %></th>
       <th><%= Domain.human_attribute_name :enabled %></th>
       <th><%= Domain.human_attribute_name :created_at %></th>
     </tr>
@@ -20,6 +21,7 @@
       <tr>
         <td><%= link_to domain.id, domain_path(domain) %></td>
         <td><%= domain.name %></td>
+        <td><%= domain.workgroup.try(:name) %></td>
         <td><%= bool_t(domain.enabled) %></td>
         <td><%= l domain.created_at %></td>
       </tr>

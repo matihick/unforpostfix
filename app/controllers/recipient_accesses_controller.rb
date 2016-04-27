@@ -1,4 +1,6 @@
 class RecipientAccessesController < ApplicationController
+  before_action :check_if_administrator
+
   def index
     @recipient_accesses = RecipientAccess.all
   end

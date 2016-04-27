@@ -1,4 +1,6 @@
 class ClientAccessesController < ApplicationController
+  before_action :check_if_administrator
+
   def index
     @client_accesses = ClientAccess.all
   end

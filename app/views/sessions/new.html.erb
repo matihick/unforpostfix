@@ -1,0 +1,35 @@
+<%= form_tag sessions_path, class: 'form-signin', autocomplete: 'off' do %>
+  <!-- Hack for prevent browser save password -->
+  <input type="text" style="display:none">
+  <input type="password" style="display:none">
+
+  <div class="centered">
+    <%= image_tag 'logo.png', style: 'display: block; margin: 0 auto;' %>
+
+    <% if @error.present? %>
+      <div class="invalid-login"><%= @error %></div>
+    <% end %>
+  </div>
+
+  <% if @return_url %>
+    <%= hidden_field_tag :return_url, @return_url %>
+  <% end %>
+
+  <div class="form-group">
+    <%= text_field_tag :email, nil, class: 'form-control', placeholder: 'Usuario', autofocus: true %>
+  </div>
+
+  <div class="form-group">
+    <%= password_field_tag :password, nil, class: 'form-control', placeholder: 'Password' %>
+  </div>
+
+  <%= button_tag 'Ingresar', class: 'btn btn-large btn-primary', data: { disable_with: "Ingresando..." } %>
+<% end %>
+
+<script type="text/javascript">
+  /* hack for prevent browser save password */
+  $(function () {
+    $('#email').val('');
+    $('#password').val('');
+  })
+</script>

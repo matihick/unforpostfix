@@ -1,0 +1,14 @@
+<%= form_for @workgroup, remote: true, html: {role: :form} do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', autofocus: true %>
+    <span class="help-block"></span>
+  </div>
+
+  <%= link_to_cancel workgroups_path %>
+  <%= f.submit class: 'btn btn-primary' %>
+
+  <% unless @workgroup.new_record? %>
+    <%= link_to_delete workgroup_path(@workgroup) %>
+  <% end %>
+<% end %>

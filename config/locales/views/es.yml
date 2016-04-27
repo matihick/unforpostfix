@@ -47,3 +47,12 @@ es:
       title: "Editar usuario"
     new:
       title: "Nuevo usuario"
+  workgroups:
+    index:
+      title: "Grupos de trabajo"
+    edit:
+      title: "Editar grupo de trabajo"
+      collection_title: "Grupos de trabajo"
+    new:
+      title: "Nuevo grupo de trabajo"
+      collection_title: "Grupos de trabajo"

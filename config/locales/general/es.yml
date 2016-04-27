@@ -13,6 +13,11 @@ es:
   access_status:
     reject: 'Rechazar'
     ok: 'Admitir'
+  login_errors:
+    access_restricted: "No tiene privilegios para entrar a la página solicitada."
+    session_inexistent_or_expired: "La sesion actual no existe o ha caducado."
+    invalid_login: "El usuario o password son incorrectos."
+    unknown_error: "Error desconocido."
   helpers:
     submit:
       back: "Atrás"
