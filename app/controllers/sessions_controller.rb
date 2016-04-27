@@ -18,7 +18,6 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by({ email: params[:email] })
-    p user
     bypass_login = Rails.env.development? || (CONFIG[:bypass_login] == 'true')
 
     if user && (user.authenticate(params[:password]) || bypass_login)

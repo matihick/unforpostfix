@@ -29,10 +29,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def set_locale
-    I18n.locale = SETTINGS[:language]
+    I18n.locale = CONFIG[:language]
   end
 
   def set_timezone
-    Time.zone = ActiveSupport::TimeZone.zones_map.values.find { |v| v.name == SETTINGS[:timezone] }
+    Time.zone = ActiveSupport::TimeZone.zones_map.values.find { |v| v.name == CONFIG[:timezone] }
   end
 end

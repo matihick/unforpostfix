@@ -1,2 +1,2 @@
-SETTINGS = YAML.load(File.read("#{Rails.root}/config/settings.yml"))[Rails.env]
-SETTINGS.symbolize_keys!
+CONFIG = YAML.load(File.read("#{Rails.root}/config/settings.yml"))[Rails.env]
+CONFIG.symbolize_keys!
