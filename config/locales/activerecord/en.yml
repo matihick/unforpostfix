@@ -4,6 +4,9 @@ en:
       alias:
         one: "Alias"
         other: "Aliases"
+      api_client:
+        one: "Api client"
+        other: "Api clients"
       client_access:
         one: "Restricción de cliente"
         other: "Restricción de clientes"
@@ -37,6 +40,11 @@ en:
         id: "#"
         to: "To"
         name: "Name"
+      api_client:
+        name: "Name"
+        access_token: "Access token"
+        enabled: "Enabled"
+        observations: "Observations"
       client_access:
         name: "Name"
         status: "Status"

@@ -4,6 +4,9 @@ es:
       alias:
         one: "Alias"
         other: "Alias"
+      api_client:
+        one: "Cliente api"
+        other: "Clientes api"
       domain:
         one: "Dominio"
         other: "Dominios"
@@ -28,6 +31,11 @@ es:
         id: "#"
         to: "Hacia"
         name: "Nombre"
+      api_client:
+        name: "Nombre"
+        access_token: "Token de acceso"
+        enabled: "Habilitado"
+        observations: "Observaciones"
       client_access:
         name: "Nombre"
         status: "Estado"

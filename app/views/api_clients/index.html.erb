@@ -1,0 +1,30 @@
+<h3><%=t('.title')%></h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><%= ApiClient.human_attribute_name :id %></th>
+      <th><%= ApiClient.human_attribute_name :name %></th>
+      <th><%= ApiClient.human_attribute_name :enabled %></th>
+      <th><%= ApiClient.human_attribute_name :observations %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @api_clients.empty? %>
+      <tr>
+        <td colspan="100%" class="text-center"><%=t('tables.no_records')%></td>
+      </tr>
+    <% end %>
+    <% @api_clients.each do |api_client| %>
+      <tr>
+        <td><%= link_to api_client.id, edit_api_client_path(api_client) %></td>
+        <td><%= api_client.name %></td>
+        <td><%= bool_t(api_client.enabled) %></td>
+        <td><%= api_client.observations %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to_new new_api_client_path %>

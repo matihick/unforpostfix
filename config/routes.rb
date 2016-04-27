@@ -13,6 +13,7 @@ Postfixman::Application.routes.draw do
     resources :sender_bccs, except: [:index, :show]
   end
 
+  resources :api_clients, except: [:show]
   resources :client_accesses, except: [:show]
   resources :recipient_accesses, except: [:show]
   resources :sender_accesses, except: [:show]

@@ -6,6 +6,15 @@ en:
       title: "New alias"
     show:
       title: "Recipients for %{from}"
+  api_clients:
+    edit:
+      title: "Edit api client"
+      collection_title: "Api clients"
+    new:
+      title: "New api client"
+      collection_title: "Api clients"
+    index:
+      title: "Api clients"
   client_accesses:
     index:
       title: "Client accesses"

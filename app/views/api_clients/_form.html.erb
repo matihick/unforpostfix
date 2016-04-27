@@ -1,0 +1,34 @@
+<%= form_for @api_client, remote: true, html: {role: :form} do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', autofocus: true %>
+    <span class="help-block"></span>
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <%= f.check_box :enabled %>
+      <%= Domain.human_attribute_name :enabled %>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :observations %>
+    <%= f.text_area :observations, class: 'form-control', rows: 3 %>
+    <span class="help-block"></span>
+  </div>
+
+  <% if @api_client.persisted? %>
+    <div class="form-group">
+      <%= f.label :access_token %>
+      <%= f.text_area :access_token, class: 'form-control', disabled: true, rows: 3 %>
+    </div>
+  <% end %>
+
+  <%= link_to_cancel api_clients_path %>
+  <%= f.submit class: 'btn btn-primary' %>
+
+  <% unless @api_client.new_record? %>
+    <%= link_to_delete api_client_path(@api_client) %>
+  <% end %>
+<% end %>

@@ -6,6 +6,15 @@ es:
       title: "Nuevo alias"
     show:
       title: "Destinatarios de %{from}"
+  api_clients:
+    edit:
+      title: "Editar cliente api"
+      collection_title: "Clientes api"
+    new:
+      title: "Nuevo cliente api"
+      collection_title: "Clientes api"
+    index:
+      title: "Clientes api"
   client_accesses:
     index:
       title: "Restricción de clientes"
