@@ -23,10 +23,12 @@ class SessionsController < ApplicationController
     if user && (user.authenticate(params[:password]) || bypass_login)
       if user.limited?
         session[:user_id] = nil
+        # session[:expiration_time] = nil
         @error = I18n.t('login_errors.access_restricted')
         render 'new'
       else
         session[:user_id] = user.id
+        # session[:expiration_time] = 1.day.from_now
         redirect_to root_url, notice: "Usuario autenticado!"
       end
     else
