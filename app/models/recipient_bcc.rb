@@ -8,6 +8,8 @@ class RecipientBcc < ActiveRecord::Base
 
   delegate :name, to: :domain, prefix: true
 
+  scope :enabled, -> { where({ enabled: true }) }
+
   default_scope -> { order(:from) }
 
   private

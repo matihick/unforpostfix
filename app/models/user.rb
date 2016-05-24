@@ -15,6 +15,8 @@
 
   delegate :name, to: :domain, prefix: true
 
+  scope :enabled, -> { where({ enabled: true }) }
+
   default_scope -> { order(:name) }
 
   def limited?
@@ -54,6 +56,8 @@
   end
 
   def set_defaults
-    self.role_code = 'limited'
+    self.role_code = 'limited' if role_code.blank?
+
+    true
   end
 end

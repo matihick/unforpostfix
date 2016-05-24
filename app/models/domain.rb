@@ -7,6 +7,8 @@ class Domain < ActiveRecord::Base
   has_many :recipient_bccs, dependent: :destroy
   has_many :sender_bccs, dependent: :destroy
 
+  scope :enabled, -> { where({ enabled: true }) }
+
   default_scope -> { order(:name) }
 
   def has_data?

@@ -8,6 +8,8 @@ class Alias < ActiveRecord::Base
 
   delegate :name, to: :domain, prefix: true
 
+  scope :enabled, -> { where({ enabled: true }) }
+
   default_scope -> { order(:from) }
 
   before_validation :normalize_recipients
@@ -24,7 +26,7 @@ class Alias < ActiveRecord::Base
   end
 
   def from_and_to_are_different
-    if from == to
+    if recipients.include?(from)
       errors.add(:to, I18n.t('activerecord.errors.messages.has_to_be_different'))
     end
   end

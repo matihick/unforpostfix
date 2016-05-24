@@ -13,3 +13,24 @@
     })
   end
 end
+
+
+# Sample starting configuration for new domain
+# Workgroup.create({
+#   name: 'My workspace'
+# })
+
+# Domain.create({
+#   name: 'somedomain.com',
+#   enabled: true,
+#   workgroup_id: 1
+# })
+
+# User.create({
+#   domain_id: 1,
+#   name: 'John Snow',
+#   email: 'jsnow@somedomain.com',
+#   unencrypted_password: 'Snow1234',
+#   password_confirmation: 'Snow1234',
+#   role_code: 'administrator'
+# })
