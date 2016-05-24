@@ -1,4 +1,8 @@
 class Api::RecipientBccsController < Api::BaseApiController
+  def show
+    render json: RecipientBcc.find(params[:id])
+  end
+
   def create
     @recipient_bcc = RecipientBcc.new({
       domain_id: Domain.enabled.find(params[:domain_id]).id,

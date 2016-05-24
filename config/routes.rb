@@ -20,7 +20,7 @@ Postfixman::Application.routes.draw do
   resources :workgroups, except: [:show]
 
   namespace :api, defaults: { format: :json } do
-    resources :domains, only: [:index] do
+    resources :domains, only: [:index, :show] do
       member do
         get :users
         get :aliases
@@ -29,9 +29,9 @@ Postfixman::Application.routes.draw do
       end
     end
 
-    resources :users, only: [:create, :update, :destroy]
-    resources :aliases, only: [:create, :update, :destroy]
-    resources :recipient_bccs, only: [:create, :update, :destroy]
-    resources :sender_bccs, only: [:create, :update, :destroy]
+    resources :users, only: [:show, :create, :update, :destroy]
+    resources :aliases, only: [:show, :create, :update, :destroy]
+    resources :recipient_bccs, only: [:show, :create, :update, :destroy]
+    resources :sender_bccs, only: [:show, :create, :update, :destroy]
   end
 end

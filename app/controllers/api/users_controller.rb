@@ -1,4 +1,8 @@
 class Api::UsersController < Api::BaseApiController
+  def show
+    render json: User.find(params[:id])
+  end
+
   def create
     @user = User.new({
       domain_id: Domain.enabled.find(params[:domain_id]).id,
@@ -33,7 +37,3 @@ class Api::UsersController < Api::BaseApiController
     render json: { success: true }
   end
 end
-
-  attributes :id, :name, :email, :enabled
-
-  has_one :domain

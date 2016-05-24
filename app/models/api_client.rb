@@ -3,6 +3,9 @@ class ApiClient < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 
+  scope :enabled, -> { where(enabled: true) }
+  scope :disabled, -> { where(enabled: [false, nil]) }
+
   private
 
   def set_defaults

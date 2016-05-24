@@ -1,3 +1,3 @@
 class AliasSerializer < ActiveModel::Serializer
-  attributes :name, :from, :recipients, :enabled
+  attributes :id, :name, :from, :recipients, :enabled
 end

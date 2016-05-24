@@ -1,4 +1,8 @@
 class Api::AliasesController < Api::BaseApiController
+  def show
+    render json: Alias.find(params[:id])
+  end
+
   def create
     @alias = Alias.new({
       domain_id: Domain.enabled.find(params[:domain_id]).id,
