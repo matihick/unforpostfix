@@ -4,12 +4,12 @@ class SessionsController < ApplicationController
   layout 'login'
 
   def new
+    @random_key = "x#{SecureRandom.hex(15)}"
+
     if current_user
       redirect_to root_url
       return
     end
-
-    @return_url = params[:return_url]
 
     if params[:error].present?
       @error = I18n.t("login_errors.#{params[:error]}")
@@ -17,10 +17,15 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by({ email: params[:email] })
+    @random_key = params[:random_key]
+
+    @login = params["#{@random_key}login"]
+    @password = params["#{@random_key}password"]
+
+    user = User.find_by({ email: @login })
     bypass_login = Rails.env.development? || (CONFIG[:bypass_login] == 'true')
 
-    if user && (user.authenticate(params[:password]) || bypass_login)
+    if user && (user.authenticate(@password) || bypass_login)
       if user.limited?
         session[:user_id] = nil
         # session[:expiration_time] = nil
