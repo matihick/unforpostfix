@@ -22,7 +22,9 @@ export RAILS_ENV=production
 
 getPID() {
   if [ ! -z `cat $PIDFILE 2> /dev/null` ]; then
-    ps -ef | awk '{ print $2 }' | grep -w `cat $PIDFILE`
+    if [[ ! -z $(ps -ef | grep -w `cat $PIDFILE` | grep -v grep) ]]; then
+      echo `cat $PIDFILE 2> /dev/null`
+    fi
   fi
 }
 

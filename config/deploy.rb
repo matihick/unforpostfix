@@ -22,7 +22,7 @@ set :application, 'postfixman'
 set :deploy_to, "/home/#{user}/postfixman"
 
 # stages of deployment
-set :stages, %w(lhconfort segurocomar thecleangarden)
+set :stages, %w(lhconfort thecleangarden)
 set :default_stage, ''
 # path to configuration templates
 set :templates_path, "config/cap/templates"

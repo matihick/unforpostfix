@@ -11,7 +11,7 @@ class ApiClient < ActiveRecord::Base
   def set_defaults
     if access_token.blank?
       begin
-        self.access_token = SecureRandom.hex(70)
+        self.access_token = SecureRandom.urlsafe_base64(70)
       end while self.class.exists?(access_token: access_token)
     end
   end
