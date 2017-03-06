@@ -9,7 +9,7 @@ class Api::UsersController < Api::BaseApiController
       name: params[:name],
       email: params[:email],
       unencrypted_password: params[:password]
-    })
+    }.keep_if { |k,v| v.present? })
 
     @user.save!
 
@@ -22,7 +22,7 @@ class Api::UsersController < Api::BaseApiController
       email: params[:email],
       enabled: params[:enabled],
       unencrypted_password: params[:password]
-    }
+    }.keep_if { |k,v| v.present? }
 
     attrs.delete_if { |k,v| v.nil? }
 

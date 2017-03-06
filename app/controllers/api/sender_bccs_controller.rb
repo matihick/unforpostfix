@@ -8,7 +8,7 @@ class Api::SenderBccsController < Api::BaseApiController
       domain_id: Domain.enabled.find(params[:domain_id]).id,
       from: params[:from],
       to: params[:to]
-    })
+    }.keep_if { |k,v| v.present? })
 
     @sender_bcc.save!
 
@@ -20,7 +20,7 @@ class Api::SenderBccsController < Api::BaseApiController
       from: params[:from],
       to: params[:to],
       enabled: params[:enabled]
-    }
+    }.keep_if { |k,v| v.present? }
 
     attrs.delete_if { |k,v| v.nil? }
 

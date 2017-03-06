@@ -9,7 +9,7 @@ class Api::AliasesController < Api::BaseApiController
       name: params[:name],
       from: params[:from],
       to: params[:to]
-    })
+    }.keep_if { |k,v| v.present? })
 
     @alias.save!
 
@@ -22,7 +22,7 @@ class Api::AliasesController < Api::BaseApiController
       from: params[:from],
       to: params[:to],
       enabled: params[:enabled]
-    }
+    }.keep_if { |k,v| v.present? }
 
     attrs.delete_if { |k,v| v.nil? }
 
