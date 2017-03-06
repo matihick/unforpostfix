@@ -38,8 +38,16 @@ class Api::DomainsController < Api::BaseApiController
       result.where!({ enabled: true })
     end
 
+    if params[:name].present?
+      result.where!(name: params[:name])
+    end
+
     if params[:from].present?
       result.where!(from: params[:from])
+    end
+
+    if params[:to].present?
+      result.where!("aliases.to LIKE ?", "%#{params[:to]}%")
     end
 
     render json: result
@@ -56,6 +64,10 @@ class Api::DomainsController < Api::BaseApiController
       result.where!(from: params[:from])
     end
 
+    if params[:to].present?
+      result.where!("recipient_bccs.to LIKE ?", "%#{params[:to]}%")
+    end
+
     render json: result
   end
 
@@ -68,6 +80,10 @@ class Api::DomainsController < Api::BaseApiController
 
     if params[:from].present?
       result.where!(from: params[:from])
+    end
+
+    if params[:to].present?
+      result.where!("sender_bccs.to LIKE ?", "%#{params[:to]}%")
     end
 
     render json: result
