@@ -18,7 +18,7 @@ class Api::DomainsController < Api::BaseApiController
   end
 
   def users
-    result = Domain.find(params[:id]).users
+    result = User.where(domain_id: params[:id])
 
     if params[:show_disabled] != 'true'
       result.where!({ enabled: true })
@@ -32,7 +32,7 @@ class Api::DomainsController < Api::BaseApiController
   end
 
   def aliases
-    result = Domain.find(params[:id]).aliases
+    result = Alias.where(domain_id: params[:id])
 
     if params[:show_disabled] != 'true'
       result.where!({ enabled: true })
@@ -46,7 +46,7 @@ class Api::DomainsController < Api::BaseApiController
   end
 
   def recipient_bccs
-    result = Domain.find(params[:id]).recipient_bccs
+    result = RecipientBcc.where(domain_id: params[:id])
 
     if params[:show_disabled] != 'true'
       result.where!({ enabled: true })
@@ -60,7 +60,7 @@ class Api::DomainsController < Api::BaseApiController
   end
 
   def sender_bccs
-    result = Domain.find(params[:id]).sender_bccs
+    result = SenderBcc.where(domain_id: params[:id])
 
     if params[:show_disabled] != 'true'
       result.where!({ enabled: true })
