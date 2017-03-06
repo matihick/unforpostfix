@@ -7,7 +7,8 @@ class Api::UsersController < Api::BaseApiController
     @user = User.new({
       domain_id: Domain.enabled.find(params[:domain_id]).id,
       name: params[:name],
-      email: params[:email]
+      email: params[:email],
+      unencrypted_password: params[:password]
     })
 
     @user.save!
@@ -19,7 +20,8 @@ class Api::UsersController < Api::BaseApiController
     attrs = {
       name: params[:name],
       email: params[:email],
-      enabled: params[:enabled]
+      enabled: params[:enabled],
+      unencrypted_password: params[:password]
     }
 
     attrs.delete_if { |k,v| v.nil? }
