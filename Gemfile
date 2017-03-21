@@ -49,6 +49,6 @@ group :development do
   gem "capistrano-template", "~> 0.0.7"
   gem "capistrano-rbenv", "~> 2.1.0"
   gem "capistrano-rails", "~> 1.2.3"
-  gem "capistrano-unformatt", "~> 1.0"
+  gem "capistrano-unformatt", "~> 1.1"
   gem "web-console", "~> 2.2.1"
 end
