@@ -1,49 +1,55 @@
-set :user, 'maintainer'
+# capistrano version
+lock "3.8.0"
 
-set :use_sudo, false
-default_run_options[:pty] = true
-ssh_options[:forward_agent] = true
+# setup
+set :setup_nginx, true
+set :setup_yamls, [:database, :secrets, :cable, :settings]
+set :setup_daemons, [
+  { name: :unicorn, config: true}
+]
+set :erase_deploy_folder_on_uninstall, true
 
-set :default_environment, {
-  "PATH" => "/home/#{user}/.rbenv/shims:/home/#{user}/.rbenv/bin:$PATH"
-}
+set :application, "postfixman"
+set :keep_releases, 5
+set :deploy_to, "/home/maintainer/#{fetch(:application)}"
 
-set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
+fetch(:setup_yamls, []).each do |yaml|
+  append :linked_files, "config/#{yaml}.yml"
+end
 
-set :scm, :git
-set :repository, 'git@github.com:unformattmh/postfixman-backend.git'
+append :linked_dirs, "log", "tmp", "solr"
+
+# scm
+set :repo_url, "git@github.com:unformattmh/postfixman-backend.git"
 set :branch, :master
 
-set :deploy_via, :remote_cache
-set :git_shallow_clone, 1
-set :keep_releases, 3
+# rbenv
+set :rbenv_type, :user
+set :rbenv_ruby, "2.2.5"
 
-set :application, 'postfixman'
-set :deploy_to, "/home/#{user}/postfixman"
+# rails
+set :rails_env, :production
+set :migration_role, :app
+set :conditionally_migrate, true
+set :assets_roles, :web
+set :keep_assets, 2
 
-# stages of deployment
-set :stages, %w(lhconfort thecleangarden)
-set :default_stage, ''
-# path to configuration templates
-set :templates_path, "config/cap/templates"
-# list of ymls used
-set :ymls, [:database, :settings, :secrets]
-# list of daemons used
-set :daemons, [:unicorn]
+# monit
+set :monit_scripts_path, "/etc/monit/conf.d"
+set :monit_user, 'maintainer'
+set :monit_group, 'maintainer'
 
-set :daemons_path, '/etc/init.d'
-set :monit_scripts_path, '/etc/monit/conf.d'
+# daemons
+set :daemons_path, "/etc/init.d"
 
+# app_server
+set :app_server_host, '127.0.0.1'
+set :app_server_port, 3000
+
+# nginx
 set :nginx_path, '/etc/nginx'
+set :nginx_server_names, 'mail.domain.com'
 set :nginx_read_timeout, '60'
-set :nginx_use_ssl, false
-# ssl certificate paths (uncomment if you use ssl)
-set :nginx_ssl_private_key, '/etc/ssl/private/star_seguro_com_ar.key'
-set :nginx_ssl_certificate, '/etc/ssl/certs/star_seguro_com_ar_chained.crt'
-
-# app servers data
-set :app_servers, {
-  lhconfort: { host: '127.0.0.1', port: '3000' },
-  segurocomar: { host: '127.0.0.1', port: '3030' },
-  thecleangarden: { host: '127.0.0.1', port: '3000' }
-}
+set :nginx_use_ssl, true
+set :nginx_ssl_private_key, '/path/to/private.key'
+set :nginx_ssl_certificate, '/path/to/certificate.crt'

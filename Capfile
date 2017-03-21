@@ -1,12 +1,13 @@
-load 'deploy'
-load 'config/deploy'
-load 'config/cap/helpers'
+require "capistrano/setup"
+require "capistrano/deploy"
 
-Dir.glob("#{Dir.pwd}/config/cap/recipes/*").each do |recipe_file|
-  load recipe_file
-end
+require "capistrano/scm/git"
+install_plugin Capistrano::SCM::Git
 
-load 'deploy/assets'
+require "capistrano/rbenv"
+require 'capistrano/rails'
 
-require 'bundler/capistrano'
-require 'capistrano/ext/multistage'
+require 'capistrano/capistrano_plugin_template'
+require 'capistrano/unformatt/all'
+
+Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
