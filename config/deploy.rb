@@ -44,7 +44,7 @@ set :daemons_path, "/etc/init.d"
 
 # app_server
 set :app_server_host, '127.0.0.1'
-set :app_server_port, 3000
+set :app_server_port, 3150
 
 # nginx
 set :nginx_path, '/etc/nginx'
