@@ -48,8 +48,5 @@ set :app_server_port, 3150
 
 # nginx
 set :nginx_path, '/etc/nginx'
-set :nginx_server_names, 'mail.domain.com'
-set :nginx_read_timeout, '60'
+set :nginx_protocols, [:http, :https]
 set :nginx_use_ssl, true
-set :nginx_ssl_private_key, '/path/to/private.key'
-set :nginx_ssl_certificate, '/path/to/certificate.crt'
