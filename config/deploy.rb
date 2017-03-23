@@ -17,7 +17,7 @@ fetch(:setup_yamls, []).each do |yaml|
   append :linked_files, "config/#{yaml}.yml"
 end
 
-append :linked_dirs, "log", "tmp", "solr"
+append :linked_dirs, "log", "tmp", "solr/default/data"
 
 # scm
 set :repo_url, "git@github.com:unformattmh/postfixman-backend.git"
