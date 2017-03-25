@@ -1,0 +1,8 @@
+production:
+  adapter: "mysql2"
+  username: "user"
+  password: "123456"
+  host: "localhost"
+  database: "postfixman"
+  encoding: "utf8"
+  collation: "utf8_unicode_ci"
