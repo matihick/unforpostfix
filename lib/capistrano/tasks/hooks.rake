@@ -8,7 +8,7 @@ after "deploy:uninstall", "deploy:nginx:reload"
 
 # unicorn
 after "deploy:install", "deploy:unicorn:reload"
-after "deploy:finished", "deploy:unicorn:reload"
+after "deploy:finished", "deploy:unicorn:restart"
 
 # sidekiq
 # before "deploy:starting", "deploy:sidekiq:reject_new_jobs"

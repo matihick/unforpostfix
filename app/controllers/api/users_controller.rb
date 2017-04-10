@@ -9,7 +9,8 @@ class Api::UsersController < Api::BaseApiController
       name: params[:name],
       email: params[:email],
       unencrypted_password: params[:password],
-      password_confirmation: params[:password]
+      password_confirmation: params[:password],
+      enabled: (['1','true'].include?(params[:enabled]))
     }.keep_if { |k,v| v.present? })
 
     @user.save!
@@ -21,7 +22,7 @@ class Api::UsersController < Api::BaseApiController
     attrs = {
       name: params[:name],
       email: params[:email],
-      enabled: params[:enabled],
+      enabled: (['1','true'].include?(params[:enabled])),
       unencrypted_password: params[:password],
       password_confirmation: params[:password]
     }.keep_if { |k,v| v.present? }

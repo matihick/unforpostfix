@@ -57,6 +57,7 @@
 
   def set_defaults
     self.role_code = 'limited' if role_code.blank?
+    self.enabled = true if enabled.nil?
 
     true
   end
