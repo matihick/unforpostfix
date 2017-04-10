@@ -20,6 +20,10 @@ class Api::DomainsController < Api::BaseApiController
   def users
     result = User.where(domain_id: params[:id])
 
+    if params[:enabled].present?
+      result.where!(enabled: ['1', 'true'].include?(params[:enabled]))
+    end
+
     if params[:email].present?
       result.where!(email: params[:email])
     end
