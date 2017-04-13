@@ -42,12 +42,14 @@ group :production do
   gem "unicorn", "~> 5.3.0"
 end
 
+gem "puma", "~> 3.8.2"
+
 group :development do
-  gem "puma", "~> 3.8.2"
   gem "capistrano", "~> 3.8.0"
   gem "capistrano-template", "~> 0.0.7"
   gem "capistrano-rbenv", "~> 2.1.0"
   gem "capistrano-rails", "~> 1.2.3"
   gem "capistrano-unformatt", "~> 1.14"
-  gem "web-console", "~> 3.5.0"
+  gem 'listen', '~> 3.1.5'
+  gem 'web-console', '~> 3.4.0'
 end
