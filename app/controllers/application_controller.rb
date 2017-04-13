@@ -33,6 +33,6 @@ class ApplicationController < ActionController::Base
   end
 
   def set_timezone
-    Time.zone = ActiveSupport::TimeZone.all.values.find { |v| v.name == SETTINGS[:timezone] }
+    Time.zone = ActiveSupport::TimeZone.all.find { |v| v.name == SETTINGS[:timezone] }
   end
 end
