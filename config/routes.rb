@@ -1,4 +1,4 @@
-Postfixman::Application.routes.draw do
+Rails.application.routes.draw do
   root to: 'domains#index'
 
   resources :sessions, only: [:create]
