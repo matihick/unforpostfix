@@ -1,4 +1,4 @@
-class Alias < ActiveRecord::Base
+class Alias < ApplicationRecord
   belongs_to :domain
 
   validates :from, presence: true, uniqueness: { case_sensitive: false }, email: true

@@ -1,4 +1,4 @@
-class ClientAccess < ActiveRecord::Base
+class ClientAccess < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :status, presence: true
 

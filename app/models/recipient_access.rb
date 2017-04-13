@@ -1,4 +1,4 @@
-class RecipientAccess < ActiveRecord::Base
+class RecipientAccess < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :status, presence: true
 

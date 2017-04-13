@@ -23,9 +23,8 @@ class SessionsController < ApplicationController
     @password = params["#{@random_key}password"]
 
     user = User.find_by({ email: @login })
-    bypass_login = Rails.env.development? || (CONFIG[:bypass_login] == 'true')
 
-    if user && (user.authenticate(@password) || bypass_login)
+    if user && (user.authenticate(@password) || Rails.env.development?)
       if user.limited?
         session[:user_id] = nil
         # session[:expiration_time] = nil

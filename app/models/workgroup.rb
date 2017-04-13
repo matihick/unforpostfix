@@ -1,2 +1,2 @@
-class Workgroup < ActiveRecord::Base
+class Workgroup < ApplicationRecord
 end

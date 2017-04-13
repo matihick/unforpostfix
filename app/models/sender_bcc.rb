@@ -1,4 +1,4 @@
-class SenderBcc < ActiveRecord::Base
+class SenderBcc < ApplicationRecord
   belongs_to :domain
 
   validates :from, presence: true, uniqueness: { case_sensitive: false }, email: true

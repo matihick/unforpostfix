@@ -1,4 +1,4 @@
-class SenderAccess < ActiveRecord::Base
+class SenderAccess < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :status, presence: true
 

@@ -1,4 +1,4 @@
- class User < ActiveRecord::Base
+ class User < ApplicationRecord
   attr_accessor :unencrypted_password, :password_confirmation
 
   belongs_to :domain

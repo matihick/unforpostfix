@@ -1,4 +1,4 @@
-class Domain < ActiveRecord::Base
+class Domain < ApplicationRecord
   validates :name, presence: true, uniqueness: { case_sensitive: false }, domain: true
 
   belongs_to :workgroup

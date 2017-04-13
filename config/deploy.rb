@@ -9,7 +9,7 @@ set :setup_daemons, [
 ]
 set :erase_deploy_folder_on_uninstall, true
 
-set :application, "postfixman"
+set :application, "unforpostfix"
 set :keep_releases, 5
 set :deploy_to, "/home/maintainer/#{fetch(:application)}"
 
@@ -20,7 +20,7 @@ end
 append :linked_dirs, "log", "tmp", "solr/default/data"
 
 # scm
-set :repo_url, "git@github.com:unformattmh/postfixman-backend.git"
+set :repo_url, "git@github.com:lhconfort/unforpostfix.git"
 set :branch, :master
 
 # rbenv

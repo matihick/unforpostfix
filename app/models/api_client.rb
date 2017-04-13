@@ -1,4 +1,4 @@
-class ApiClient < ActiveRecord::Base
+class ApiClient < ApplicationRecord
   before_save :set_defaults
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
