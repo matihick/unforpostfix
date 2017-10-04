@@ -1,5 +1,5 @@
 # capistrano version
-lock "3.8.0"
+lock "3.9.1"
 
 # setup
 set :setup_nginx, true
@@ -25,7 +25,7 @@ set :branch, :master
 
 # rbenv
 set :rbenv_type, :user
-set :rbenv_ruby, "2.2.5"
+set :rbenv_ruby, "2.3.5"
 
 # rails
 set :rails_env, :production

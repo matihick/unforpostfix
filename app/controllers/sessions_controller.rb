@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_filter :check_logged_user
+  skip_before_action :check_logged_user
 
   layout 'login'
 
