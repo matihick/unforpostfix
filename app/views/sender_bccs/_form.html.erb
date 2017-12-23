@@ -20,7 +20,7 @@
 
   <%= link_to_cancel domain_path(@domain, anchor: 'sender_bccs') %>
   <%= f.submit class: 'btn btn-primary' %>
-  <% unless @recipient_bcc.new_record? %>
-    <%= link_to_delete sender_bcc_path(@recipient_bcc) %>
+  <% unless @sender_bcc.new_record? %>
+    <%= link_to_delete sender_bcc_path(@sender_bcc) %>
   <% end %>
 <% end %>
